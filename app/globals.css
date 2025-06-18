@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 252 231 243;
+    --foreground: 31 41 55;
+    --card: 255 255 255;
+    --card-foreground: 31 41 55;
+    --popover: 255 255 255;
+    --popover-foreground: 31 41 55;
+    --primary: 219 39 119;
+    --primary-foreground: 255 255 255;
+    --secondary: 253 242 248;
+    --secondary-foreground: 31 41 55;
+    --muted: 248 250 252;
+    --muted-foreground: 107 114 128;
+    --accent: 252 231 243;
+    --accent-foreground: 31 41 55;
+    --destructive: 239 68 68;
+    --destructive-foreground: 255 255 255;
+    --border: 219 39 119;
+    --input: 255 255 255;
+    --ring: 219 39 119;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    background: linear-gradient(180deg, #fdf2f8 0%, #fce7f3 30%, #fbcfe8 70%, #f9a8d4 100%);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+}
+
+.professional-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #db2777, #be185d, #9d174d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Professional transitions */
+* {
+  transition: all 0.2s ease;
+}
+
+/* Clean input styling */
+.professional-input {
+  background: rgba(255, 255, 255, 0.98);
+  color: #1f2937 !important;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+.professional-input::placeholder {
+  color: #6b7280 !important;
+  font-weight: 400;
+}
+
+.professional-input:focus {
+  background: rgba(255, 255, 255, 1);
+  border-color: #db2777;
+  color: #1f2937 !important;
+  box-shadow: 0 0 0 3px rgba(219, 39, 119, 0.1);
+}
+
+/* Professional button styling */
+.professional-button {
+  background: linear-gradient(135deg, #db2777, #be185d);
+  border: none;
+  box-shadow: 0 2px 12px rgba(219, 39, 119, 0.25);
+  font-weight: 600;
+}
+
+.professional-button:hover {
+  background: linear-gradient(135deg, #be185d, #9d174d);
+  box-shadow: 0 4px 16px rgba(219, 39, 119, 0.35);
+  transform: translateY(-1px);
+}
+
+.professional-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Professional selection states */
+.selected-option {
+  background: rgba(219, 39, 119, 0.08);
+  border-color: #db2777;
+  box-shadow: 0 2px 8px rgba(219, 39, 119, 0.15);
+}
+
+.option-card {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+}
+
+.option-card:hover {
+  background: rgba(255, 255, 255, 0.85);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
